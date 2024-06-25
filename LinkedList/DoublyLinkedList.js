@@ -44,17 +44,17 @@ class DoublyLinkedList {
      */
     pop() {
         if (!this.head) return;
+        const poppedNode = this.tail;
         if (this.length === 1) {
             this.head = null;
             this.tail = null;
         } else {
-            const newTail = this.tail.prev;
-            this.tail.prev = null;
-            newTail.next = null;
-            this.tail = newTail;
+            this.tail = poppedNode.prev;
+            this.tail.next = null;
+            poppedNode.prev = null;
         }
         this.length--;
-        return this.tail;
+        return poppedNode;
     }
 
     shift() {
