@@ -24,7 +24,6 @@ class PriorityQueue {
             this.values[0].priority = end.priority;
             this.sinkDown();
         }
-
         return min;
     }
 
@@ -88,3 +87,5 @@ ER.dequeue();
 ER.dequeue();
 
 console.log(ER);
+
+export default PriorityQueue;
